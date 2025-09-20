@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>On-Device LLM with MediaPipe</title>
   <link rel="stylesheet" href="style.css" />
+  <!-- ✅ Use the CommonJS bundle instead of .mjs -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/tasks-genai/genai_bundle.cjs" crossorigin="anonymous"></script>
 </head>
 <body>
   <div class="container">
@@ -15,14 +17,7 @@
     <div id="status">Status: Ready</div>
   </div>
 
-  <!-- Your main script is now the only module -->
-  <script type="module">
-    import { FilesetResolver, LlmInference } from "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-genai@0.10.25/genai_bundle.mjs";
-    import "./script.js";
-    
-    // Expose globally if needed
-    window.FilesetResolver = FilesetResolver;
-    window.LlmInference = LlmInference;
-  </script>
+  <!-- ✅ Load your script as a normal script -->
+  <script src="script.js"></script>
 </body>
 </html>
