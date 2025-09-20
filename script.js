@@ -16,7 +16,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     // 2. Create LLM Inference instance
     llmInference = await LlmInference.createFromOptions(genai, {
       baseOptions: {
-        modelAssetPath: '/assets/gemma-3n-E4B-it-int4-Web.litertlm'
+        modelAssetPath: 'https://huggingface.co/google/gemma-3n-E4B-it-litert-lm/resolve/main/gemma-3n-E4B-it-int4-Web.litertlm'
       },
       maxTokens: 1000,
       topK: 40,
@@ -69,4 +69,5 @@ document.getElementById('generate').addEventListener('click', async () => {
 // Helper to update status text
 function updateStatus(message) {
   document.getElementById('status').textContent = `Status: ${message}`;
+
 }
