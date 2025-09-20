@@ -1,5 +1,5 @@
-// ✅ Import from the global CDN module
-import { FilesetResolver, LlmInference } from 'https://cdn.jsdelivr.net/npm/@mediapipe/tasks-genai@0.10.25/genai_bundle.mjs';
+// ✅ Get classes from window (exposed by genai_bundle.cjs)
+const { FilesetResolver, LlmInference } = window;
 
 let llmInference = null;
 
@@ -10,7 +10,7 @@ window.addEventListener('DOMContentLoaded', async () => {
   try {
     // 1. Load WASM files for MediaPipe GenAI
     const genai = await FilesetResolver.forGenAiTasks(
-      "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-genai@0.10.25/wasm"
+      "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-genai@latest/wasm"
     );
 
     // 2. Create LLM Inference instance
@@ -69,8 +69,4 @@ document.getElementById('generate').addEventListener('click', async () => {
 // Helper to update status text
 function updateStatus(message) {
   document.getElementById('status').textContent = `Status: ${message}`;
-
 }
-
-
-
