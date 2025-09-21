@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>On-Device LLM with MediaPipe</title>
   <link rel="stylesheet" href="style.css" />
-  <!-- ✅ Use the CommonJS bundle instead of .mjs -->
-  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/tasks-genai/genai_bundle.cjs" crossorigin="anonymous"></script>
+  <!-- Load MediaPipe GenAI Bundle from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/tasks-genai@0.10.25/genai_bundle.mjs" crossorigin="anonymous"></script>
+</head>
 </head>
 <body>
   <div class="container">
@@ -17,7 +18,6 @@
     <div id="status">Status: Ready</div>
   </div>
 
-  <!-- ✅ Load your script as a normal script -->
-  <script src="script.js"></script>
+  <script type="module" src="script.js"></script>
 </body>
 </html>
